@@ -12,10 +12,10 @@ class SettingTableSeeder extends Seeder
     public function run()
     {
         \App\Setting::create([
-            'site_name' => "Laravel's Blog",
-            'address' => 'Egypt,sohag',
+            'site_name' => "Graduation Project",
+            'address' => 'Egypt,Assuit University',
             'contact_number' => '0123456789',
-            'contact_email' => 'info@laravel_blog.com'
+            'contact_email' => 'info@graduationproject.com'
         ]);
     }
 }

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card card-default">
+        <div class="card-header">
             Published Posts
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             <table class="table table-hover">
                     <thead>
                         <th>
@@ -32,11 +32,11 @@
                                     {{$post->title}}
                                 </td>
                                 <td>
-                                    <a href="{{route('post.edit' ,['id' => $post->id])}}" class="btn btn-xs btn-info">Edit</a>
+                                    <a href="{{route('post.edit' ,['id' => $post->id])}}" class="btn btn-sm btn-info">Edit</a>
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </td> 
                                 <td>
-                                    <a href="{{route('post.delete', ['id' => $post->id])}}" class="btn btn-xs btn-danger">Trash</a>
+                                    <a href="{{route('post.delete', ['id' => $post->id])}}" class="btn btn-sm btn-danger">Trash</a>
                                     <span class="glyphicon glyphicon-"></span>
                                 </td>
                             </tr>

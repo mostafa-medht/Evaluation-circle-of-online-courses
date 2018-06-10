@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card panel-default">
+        <div class="card-header">
             Categories
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             <table class="table table-hover">
                     <thead>
                         <th>
@@ -26,11 +26,11 @@
                                     {{$category->name}}
                                 </td>
                                 <td>
-                                    <a href="{{route('category.edit' ,['id' => $category->id])}}" class="btn btn-xs btn-info">Edit</a>
+                                    <a href="{{route('category.edit' ,['id' => $category->id])}}" class="btn btn-sm btn-info">Edit</a>
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </td> 
                                 <td>
-                                    <a href="{{route('category.delete', ['id' => $category->id])}}" class="btn btn-xs btn-danger">Delete</a>
+                                    <a href="{{route('category.delete', ['id' => $category->id])}}" class="btn btn-sm btn-danger">Delete</a>
                                     <span class="glyphicon glyphicon-"></span>
                                 </td>
                             </tr>

@@ -76,7 +76,7 @@ class PostsController extends Controller
 
         Session::flash('success','Post created successfuly.');
         //dd($request->all());
-        return redirect()->route('posts.index');
+        return redirect()->route('posts');
     }
 
     /**

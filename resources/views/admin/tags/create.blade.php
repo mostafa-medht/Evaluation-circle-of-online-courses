@@ -11,12 +11,12 @@
         </ul>
     @endif
     <br>
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card card-default">
+        <div class="card-header">
             Create a new Tag
         </div>
         
-        <div class="panel-body">
+        <div class="card-body">
         <form action='{{ route('tag.store')}}' method="POST" >
                 {{csrf_field()}}
                 <div class="form-group">

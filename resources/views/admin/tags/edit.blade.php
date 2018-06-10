@@ -11,12 +11,12 @@
         </ul>
     @endif
     <br>
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card card-default">
+        <div class="card-header">
             Edit a Tag : {{$tag->tag}}
         </div>
         
-        <div class="panel-body">
+        <div class="card-body">
         <form action='{{ route('tag.update',['id' =>$tag->id])}}' method="POST" >
                 {{csrf_field()}}
                 <div class="form-group">

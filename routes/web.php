@@ -59,6 +59,7 @@ Route::group(['prefix'=> 'admin' ,'middleware' => 'auth'] , function(){
         'as' => 'home'
     ]);
 
+    // Post 
     Route::get('/post/create' ,[
         'uses' => 'PostsController@create',
         'as' => 'post.create'
@@ -104,6 +105,7 @@ Route::group(['prefix'=> 'admin' ,'middleware' => 'auth'] , function(){
         'as' => 'post.update'
     ]);
     
+    // Category
     Route::get('/category/create' ,[
         'uses' => 'CategoriesController@create',
         'as' => 'category.create'
@@ -134,6 +136,7 @@ Route::group(['prefix'=> 'admin' ,'middleware' => 'auth'] , function(){
         'as' => 'category.update'
     ]);
 
+    // Tag
     Route::get('/tags',[
         'uses' => 'TagsController@index',
         'as' => 'tags'
@@ -164,6 +167,29 @@ Route::group(['prefix'=> 'admin' ,'middleware' => 'auth'] , function(){
         'as' => 'tag.delete'
     ]);
 
+    // Comment 
+    // Comments
+	Route::post('comments/{post_id}', [
+        'uses' => 'CommentsController@store',
+         'as' => 'comments.store']);
+
+	Route::get('comments/{id}/edit', [
+        'uses' => 'CommentsController@edit',
+         'as' => 'comments.edit']);
+
+	Route::put('comments/{id}', [
+        'uses' => 'CommentsController@update',
+         'as' => 'comments.update']);
+
+	Route::delete('comments/{id}', [
+        'uses' => 'CommentsController@destroy', 
+        'as' => 'comments.destroy']);
+
+	Route::get('comments/{id}/delete', [
+        'uses' => 'CommentsController@delete',
+         'as' => 'comments.delete']);
+
+    // User
     Route::get('/users',[
         'uses' => 'UsersController@index',
         'as' => 'users'

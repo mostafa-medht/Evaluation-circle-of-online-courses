@@ -11,12 +11,12 @@
         </ul>
     @endif
     <br>
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card card-default">
+        <div class="card-header">
             Edit Blog Settings
         </div>
         
-        <div class="panel-body">
+        <div class="card-body">
         <form action='{{ route('settings.update')}}' method="POST" >
                 {{csrf_field()}}
                 <div class="form-group">

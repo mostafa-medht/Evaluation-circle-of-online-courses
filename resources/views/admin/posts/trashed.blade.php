@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="panel panel-default">
-        <div class="panel-heading">
+    <div class="card card-default">
+        <div class="card-header">
             Trashed Posts
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             <table class="table table-hover">
                     <thead>
                         <th>

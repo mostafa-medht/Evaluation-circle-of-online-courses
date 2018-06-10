@@ -3,12 +3,12 @@
 @section('content')
     @include('admin.includes.errors')
     <br>
-    <div class="panel panel-default">
-        <div class="panal-heading">
+    <div class="card card-default">
+        <div class="card-header">
             Update Category : {{$category->name}}
         </div>
         
-        <div class="panel-body">
+        <div class="card-body">
         <form action='{{ route('category.update',['id' => $category->id])}}' method="POST" >
                 {{csrf_field()}}
                 <div class="form-group">

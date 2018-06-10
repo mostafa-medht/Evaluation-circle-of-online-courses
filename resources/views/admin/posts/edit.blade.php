@@ -11,12 +11,12 @@
         </ul>
     @endif
     <br>
-    <div class="panel panel-default">
-        <div class="panal-heading">
+    <div class="card card-default">
+        <div class="card-header">
             Edit post: {{$post->title}}
         </div>
         
-        <div class="panel-body">
+        <div class="card-body">
         <form action='{{ route('post.update',['id' => $post->id])}}' method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
