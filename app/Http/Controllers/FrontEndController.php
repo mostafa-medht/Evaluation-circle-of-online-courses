@@ -6,6 +6,7 @@ use App\Category;
 use App\Setting;
 use App\Post;
 use App\Tag;
+use App\Comment;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
@@ -60,6 +61,7 @@ class FrontEndController extends Controller
                             ->with('settings',Setting::first())                            
                             ->with('categories',Category::take(5)->get());
     }
+
 
     // public function search($query) {
     //     $posts = \App\Post::where('title','like', '%' . request($query) . '%')->get();

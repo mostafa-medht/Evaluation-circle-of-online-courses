@@ -155,18 +155,67 @@
                         </div>
         
                         <div class="comments">
-        
-                            <div class="heading text-center">
-                                <h4 class="h1 heading-title">Comments</h4>
-                                <div class="heading-line">
-                                    <span class="short-line"></span>
-                                    <span class="long-line"></span>
+    
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <h3 class="comments-title"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>  {{ $post->comments()->count() }} Comments</h3>
+                                    @foreach($post->comments as $comment)
+                                        <div class="comment">
+                                            <div class="author-info">
+                        
+                                                <img src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email))) . "?s=50&d=monsterid" }}" class="author-image">
+                                                <div class="author-name">
+                                                    <h4>{{ $comment->name }}</h4>
+                                                    <p class="author-time">{{ date('F nS, Y - g:iA' ,strtotime($comment->created_at)) }}</p>
+                                                </div>
+                                                
+                                            </div>
+                        
+                                            <div class="comment-content">
+                                                {{ $comment->comment }}
+                                            </div>
+                                            
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
 
-                            @include('includes.disqus')
+                            <div class="row">
+                                <div id="comment-form" class="col-md-10 col-md-offset-2" style="margin-top: 50px;">
+                                  {!! Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST']) !!}
+                                    <div class="card card-default">
+                                            <div class="card-header">
+                                                Leave a Comment :)
+                                            </div>
+
+                                            <div class="card-body">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                    {{ Form::label('name', "Name:") }}
+                                                    {{ Form::text('name', null, ['class' => 'form-control' , 'placeholder'=>'Name....']) }}
+                                                    </div>   
+                                                </div>
+                            
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                    {{ Form::label('email', 'Email:') }}
+                                                    {{ Form::text('email', null, ['class' => 'form-control', 'placeholder'=>'Plz Enter an email']) }}
+                                                    </div>
+                                                </div>
+                            
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                    {{ Form::label('comment', "Comment:") }}
+                                                    {{ Form::textarea('comment', null, ['class' => 'form-control', 'rows' => '5', 'placeholder'=>'Add Your Comment.....:)']) }}
+                                                    </div>
+
+                                                    {{ Form::submit('Add Comment', ['class' => 'btn btn-success ', 'style' => 'margin-top:15px;']) }}    
+                                                </div>
+                                            </div>    
+                                    </div>
+                                {!! Form::close() !!}
+                            </div>
                         </div>
-        
                         
                     </div>
         

@@ -48,7 +48,6 @@ Route::get('/tag/{id}',[
     'as' => 'tag.single'
 ]);
 
-
 Auth::routes();
 
 
@@ -181,14 +180,15 @@ Route::group(['prefix'=> 'admin' ,'middleware' => 'auth'] , function(){
         'uses' => 'CommentsController@update',
          'as' => 'comments.update']);
 
-	Route::delete('comments/{id}', [
-        'uses' => 'CommentsController@destroy', 
-        'as' => 'comments.destroy']);
-
-	Route::get('comments/{id}/delete', [
-        'uses' => 'CommentsController@delete',
+	Route::get('comments/delete/{id}', [
+        'uses' => 'CommentsController@destroy',
          'as' => 'comments.delete']);
 
+    Route::get('/comments' ,[
+    'uses' => 'CommentsController@index',
+    'as' => 'comments'
+    ]);
+             
     // User
     Route::get('/users',[
         'uses' => 'UsersController@index',

@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('app/css/grid.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('app/css/styles.css')}}">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet">
 
     <!--Plugins styles-->
 
