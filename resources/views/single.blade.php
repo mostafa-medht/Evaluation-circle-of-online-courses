@@ -181,35 +181,35 @@
                             </div>
 
                             <div class="row">
-                                <div id="comment-form" class="col-md-10 col-md-offset-2" style="margin-top: 50px;">
+                                <div id="comment-form" class="col-md-8 col-md-offset-2" style="margin-top: 50px;">
                                   {!! Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST']) !!}
                                     <div class="card card-default">
-                                            <div class="card-header">
-                                                Leave a Comment :)
+                                            <div class="card-header" style="margin-bottom: 30px; color:black">
+                                               (: Leave a Comment :)
                                             </div>
 
                                             <div class="card-body">
                                                 <div class="col-md-4">
-                                                    <div class="form-group">
+                                                    <div class="form-group" style="color: black">
                                                     {{ Form::label('name', "Name:") }}
                                                     {{ Form::text('name', null, ['class' => 'form-control' , 'placeholder'=>'Name....']) }}
                                                     </div>   
                                                 </div>
                             
                                                 <div class="col-md-4">
-                                                    <div class="form-group">
+                                                    <div class="form-group" style="color: black">
                                                     {{ Form::label('email', 'Email:') }}
                                                     {{ Form::text('email', null, ['class' => 'form-control', 'placeholder'=>'Plz Enter an email']) }}
                                                     </div>
                                                 </div>
                             
                                                 <div class="col-md-12">
-                                                    <div class="form-group">
+                                                    <div class="form-group" style="color:black; border: darkslategray">
                                                     {{ Form::label('comment', "Comment:") }}
                                                     {{ Form::textarea('comment', null, ['class' => 'form-control', 'rows' => '5', 'placeholder'=>'Add Your Comment.....:)']) }}
                                                     </div>
 
-                                                    {{ Form::submit('Add Comment', ['class' => 'btn btn-success ', 'style' => 'margin-top:15px;']) }}    
+                                                    {{ Form::submit('Add Comment', ['class' => 'btn btn-success ', 'style' => 'margin-top:15px; background-color:#28a745']) }}    
                                                 </div>
                                             </div>    
                                     </div>
