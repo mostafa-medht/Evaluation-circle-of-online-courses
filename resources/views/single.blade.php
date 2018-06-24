@@ -172,7 +172,8 @@
                                             </div>
                         
                                             <div class="comment-content">
-                                                {{ $comment->comment }}
+                                               <span style="color: blue" > {{ $comment->comment }} </span> <br><br>
+                                                <span style="color: red" >Result : Acceptance of this subject is : {{ $comment->score }} % </span> 
                                             </div>
                                             
                                         </div>
@@ -189,27 +190,33 @@
                                             </div>
 
                                             <div class="card-body">
-                                                <div class="col-md-4">
+                                                <!-- <div class="col-md-4">
                                                     <div class="form-group" style="color: black">
                                                     {{ Form::label('name', "Name:") }}
                                                     {{ Form::text('name', null, ['class' => 'form-control' , 'placeholder'=>'Name....']) }}
                                                     </div>   
-                                                </div>
+                                                </div> -->
                             
                                                 <div class="col-md-4">
                                                     <div class="form-group" style="color: black">
-                                                    {{ Form::label('email', 'Email:') }}
-                                                    {{ Form::text('email', null, ['class' => 'form-control', 'placeholder'=>'Plz Enter an email']) }}
+                                                    {{ Form::label('StudentID', 'StudentID') }}
+                                                    {{ Form::text('studentid', null, ['class' => 'form-control', 'placeholder'=>'Plz Enter Student ID']) }}
                                                     </div>
                                                 </div>
-                            
+                                                
+                                                <div class="col-md-4">
+                                                    <div class="form-group" style="color: black">
+                                                        <input name="score" class="form-control" type="hidden" id="score">
+                                                        <!-- text('score', null,['class' => 'form-control','type'=>hidden,'id'=>'score'])}} -->
+                                                    </div>
+                                                </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group" style="color:black; border: darkslategray">
                                                     {{ Form::label('comment', "Comment:") }}
-                                                    {{ Form::textarea('comment', null, ['class' => 'form-control', 'rows' => '5', 'placeholder'=>'Add Your Comment.....:)']) }}
+                                                    {{ Form::textarea('comment', null, ['class' => 'form-control', 'rows' => '5','id' => 'txt', 'placeholder'=>'Add Your Comment.....:)']) }}
                                                     </div>
 
-                                                    {{ Form::submit('Add Comment', ['class' => 'btn btn-success ', 'style' => 'margin-top:15px; background-color:#28a745']) }}    
+                                                    {{ Form::submit('Add Comment', ['class' => 'btn btn-success ','id' => 'butt', 'style' => 'margin-top:15px; background-color:#28a745']) }}    
                                                 </div>
                                             </div>    
                                     </div>
@@ -218,7 +225,9 @@
                         </div>
                         
                     </div>
-        
+                    
+
+
                     <!-- End Post Details -->
         
                     <!-- Sidebar-->
@@ -244,10 +253,14 @@
                             </div>
                         </aside>
                     </div>
-        
                     <!-- End Sidebar-->
         
                 </main>
             </div>
         </div>
+    
+    <script src="{{asset('textmining/sketch.js')}}"></script>
+    <script src="{{asset('textmining/p5.js')}}"></script>
+    <script src="{{asset('textmining/p5.dom.js')}}"></script>
+    <script src="{{asset('textmining/p5.sound.js')}}"></script>        
 @endsection

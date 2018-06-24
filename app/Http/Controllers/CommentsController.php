@@ -45,17 +45,25 @@ class CommentsController extends Controller
     public function store(Request $request, $post_id)
     {
         $this->validate($request, array(
-            'name'      =>  'required|max:255',
-            'email'     =>  'required|email|max:255',
-            'comment'   =>  'required|min:5|max:2000'
+            // 'name'      =>  'required|max:255',
+            // 'email'     =>  'required|email|max:255',
+            'StudentID'     =>  'unique:comments,StudentID',
+
+            'comment'   =>  'required|min:1|max:2000'
             ));
 
         $post = Post::find($post_id);
 
         $comment = new Comment();
-        $comment->name = $request->name;
-        $comment->email = $request->email;
+        // $comment->name = $request->name;
+        if ($request->studentid!=$comment->StudentID )
+            {$comment->StudentID = $request->studentid;}
+        else {
+            Session::flash('info', 'StudentId was taken');
+             return redirect()->back();
+        }
         $comment->comment = $request->comment;
+        $comment->score = $request->score;
         $comment->approved = true;
         $comment->post()->associate($post);
 
@@ -72,9 +80,9 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('test');
     }
 
     /**

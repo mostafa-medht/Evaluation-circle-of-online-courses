@@ -48,8 +48,38 @@ Route::get('/tag/{id}',[
     'as' => 'tag.single'
 ]);
 
-Auth::routes();
 
+
+
+// Comment 
+    // Comments
+    Route::post('comments/{post_id}', [
+        'uses' => 'CommentsController@store',
+         'as' => 'comments.store']);
+
+    Route::get('comments/{id}/edit', [
+        'uses' => 'CommentsController@edit',
+         'as' => 'comments.edit']);
+
+    Route::put('comments/{id}', [
+        'uses' => 'CommentsController@update',
+         'as' => 'comments.update']);
+
+    Route::get('comments/delete/{id}', [
+        'uses' => 'CommentsController@destroy',
+         'as' => 'comments.delete']);
+
+    Route::get('/comments' ,[
+    'uses' => 'CommentsController@index',
+    'as' => 'comments'
+    ]);
+
+    Route::get('/test' ,[
+    'uses' => 'CommentsController@show',
+    'as' => 'comments'
+    ]);
+
+Auth::routes();
 
 Route::group(['prefix'=> 'admin' ,'middleware' => 'auth'] , function(){
 
@@ -166,28 +196,6 @@ Route::group(['prefix'=> 'admin' ,'middleware' => 'auth'] , function(){
         'as' => 'tag.delete'
     ]);
 
-    // Comment 
-    // Comments
-	Route::post('comments/{post_id}', [
-        'uses' => 'CommentsController@store',
-         'as' => 'comments.store']);
-
-	Route::get('comments/{id}/edit', [
-        'uses' => 'CommentsController@edit',
-         'as' => 'comments.edit']);
-
-	Route::put('comments/{id}', [
-        'uses' => 'CommentsController@update',
-         'as' => 'comments.update']);
-
-	Route::get('comments/delete/{id}', [
-        'uses' => 'CommentsController@destroy',
-         'as' => 'comments.delete']);
-
-    Route::get('/comments' ,[
-    'uses' => 'CommentsController@index',
-    'as' => 'comments'
-    ]);
              
     // User
     Route::get('/users',[

@@ -133,6 +133,12 @@
 <script src="{{asset('app/js/ScrollMagic.min.js')}}"></script>
 <script src="{{asset('app/js/animation.velocity.min.js')}}"></script>
 
+
+<script src="{{asset('textmining/sketch.js')}}"></script>
+<script src="{{asset('textmining/p5.js')}}"></script>
+<script src="{{asset('textmining/p5.dom.js')}}"></script>
+<script src="{{asset('textmining/p5.sound.js')}}"></script>
+
 <script>
     @if (Session::has('subscribed'))
 
