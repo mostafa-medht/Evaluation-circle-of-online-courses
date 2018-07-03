@@ -17,6 +17,8 @@
     @yield('styles')
 </head>
 <body>
+    <div style="float: right;"><img src=""></div>   
+    <div style="float: left"><img src=""></div>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">

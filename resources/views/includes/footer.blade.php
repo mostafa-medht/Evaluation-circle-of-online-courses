@@ -9,11 +9,7 @@
                                 <span class="short-line"></span>
                                 <span class="long-line"></span>
                             </div>
-                            <p class="heading-text">Qolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibham
-                                liber tempor cum soluta nobis eleifend option congue nihil uarta decima et quinta.
-                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                                ut aliquip ex ea commodo consequat eleifend option nihil. Investigationes demonstraverunt
-                                lectores legere me lius quod ii legunt saepius parum claram.
+                            <p class="heading-text">Our project (Evaluation of Curricula and online Courses) is a web based application that is previously implemented, but we will implement this project in a different way using the principles of data mining which gives us some advantages from previous projects.
                             </p>
                         </div>
                     </div>

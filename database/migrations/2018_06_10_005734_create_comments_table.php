@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('comment');
+            $table->integer('StudentID');
             $table->boolean('approved');
             $table->integer('post_id');
             $table->timestamps();
